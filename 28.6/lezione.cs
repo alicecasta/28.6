@@ -15,14 +15,6 @@ namespace _28._6
         public Docente docente { get; set; }
         public Aula aulassegnata { get; set; }
         public List<Studente> presenti { get; set; }
-        public void aggiungerepresenze(Studente studente)
-        {
-            presenti.Add(studente);
-        }
-       public List<Studente>assenti { get; set; }
-       public void segnareassenti(Studente studente)
-        {
-            assenti.Add(studente);
-        }
+        
     }
 }

@@ -13,14 +13,30 @@ namespace _28._6
         public List<Lezione>lezioni {  get; set; } 
         public List<Studente>studenti { get; set; } 
         
-        public void aggiungilezioni(Lezione lezione)
+        //elenco lezioni
+       public void Stampalezioni()
         {
-            lezioni.Add(lezione);
+            foreach(Lezione lezione in this.lezioni)
+            {
+                Console.WriteLine(lezione.descrizione);
+            }
         }
-        public void aggiungistudenti(Studente studente, Lezione lezione)
+
+        public void Stampaelencoiscritti()
         {
-            studenti.Add(studente);
+            foreach(Studente studente in this.studenti)
+            {
+                Console.WriteLine("{0} {1}", studente.Nome, studente.Cognome);
+            }
         }
-        
+        // media presenti ad un corso
+        public float mediapresentialezione()
+        {
+            float totpresenti = 0;
+            foreach(Lezione lezione in this.lezioni)
+            {
+                totpresenti = totpresenti + lezione.presenti.Count;
+            }
+            return totpresenti/this.lezioni.Count;
     }
 }
